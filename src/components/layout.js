@@ -51,3 +51,5 @@ export const Layout = ({ children }) => {
     </Wrapper>
   );
 };
+
+export default Layout;
