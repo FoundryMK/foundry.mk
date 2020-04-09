@@ -1,13 +1,27 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import React from "react";
+import { Link, graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
-// import Bio from "../components/bio"
-import { Layout } from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { Layout } from "../components/layout";
+import SEO from "../components/seo";
+import { rhythm, scale } from "../utils/typography";
+import styled from 'styled-components';
 
-class BlogPostTemplate extends React.Component {
+const Title = styled.h1`
+  background: #31263e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 40vh;
+  margin: 0 0 2em 0;
+  border-bottom: 12px solid transparent;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, #f7931e 60%, #ee5622);
+`;
+
+class ProjectTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -19,28 +33,11 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <div>
-          <h1>{post.frontmatter.title}</h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-              marginTop: rhythm(-1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
+        <Title>{post.frontmatter.title}</Title>
+        <div style={{ margin: "20px 0 40px" }}>
           <MDXRenderer>{post.body}</MDXRenderer>
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
-          {/* <Bio /> */}
-
           <ul
-            style={{
+            style={{  
               display: `flex`,
               flexWrap: `wrap`,
               justifyContent: `space-between`,
@@ -50,14 +47,14 @@ class BlogPostTemplate extends React.Component {
           >
             <li>
               {previous && (
-                <Link to={`blog${previous.fields.slug}`} rel="prev">
+                <Link to={`project${previous.fields.slug}`} rel="prev">
                   ← {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link to={`blog${next.fields.slug}`} rel="next">
+                <Link to={`project${next.fields.slug}`} rel="next">
                   {next.frontmatter.title} →
                 </Link>
               )}
@@ -69,17 +66,17 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default ProjectTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query ProjectBySlug($slug: String!) {
     site {
       siteMetadata {
         title
         author
       }
     }
-    mdx(frontmatter: {type: {eq: "blog"}}, fields: { slug: { eq: $slug } }) {
+    mdx(frontmatter: {type: {eq: "project"}}, fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
       body

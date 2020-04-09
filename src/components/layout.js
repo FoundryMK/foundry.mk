@@ -23,8 +23,9 @@ const Main = styled.div`
   display: flex;
   width: 70vw;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   font-size: 16px;
+  flex-direction: column;
 
   img {
     padding: 1%;
@@ -35,8 +36,9 @@ const Main = styled.div`
     margin: 2em auto;
   }
 
-  p {
+  p, li, h1, h2, h3, h4, h5, h6 {
     max-width: 75ch;
+    // margin: 0 auto;
   }
 `
 

@@ -8,24 +8,49 @@ import { Work } from '../components/landing/Work';
 import { About } from '../components/landing/About';
 import { Footer } from '../components/Footer';
 
-class IndexPage extends React.Component {
-  render() {
-    const siteTitle = "Foundry MK"
+const IndexPage = ({ data, location }) => {
+  const siteTitle = "Foundry MK";
+  const projects = data.allMdx.edges;
 
-    return (
-      <Landing location={this.props.location} title={siteTitle}>
-        <SEO
-          title="Home"
-          keywords={[`development`, `web applications`, `javascript`, `react`]}
-        />
-        <Hero />
-        <Services />
-        <Work />
-        <About />
-        <Footer />
-      </Landing>
-    );
-  }
-}
+  return (
+    <Landing location={location} title={siteTitle}>
+      <SEO
+        title="Home"
+        keywords={[`development`, `web applications`, `javascript`, `react`]}
+      />
+      <Hero />
+      <Services />
+      <Work projects={projects} />
+      <About />
+      <Footer />
+    </Landing>
+  );
+};
 
 export default IndexPage;
+
+export const indexQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMdx(filter: {frontmatter: {type: {eq: "project"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            highlight
+          }
+        }
+      }
+    }
+  }
+`;

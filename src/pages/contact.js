@@ -12,11 +12,12 @@ const Contact = ({ data, location }) => {
     <Layout>
       <SEO title="Contact" />
       <div style={{ margin: "20px 0 40px" }}>
-        <h1>Contact</h1>
+        <h1>Contact us</h1>
+        <p>For a free quote, consultation or just to say hi, you can reach us at any of these:</p>
         <ul>
+          <li>Email: <a href="mailto:root@foundry.mk">root@foundry.mk</a></li>
           <li>Social media</li>
-          <li>Phone</li>
-          <li>Email</li>
+          <li>Phone: ++ 389 78 397 359</li>
         </ul>
       </div>
     </Layout>

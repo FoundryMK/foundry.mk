@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import Logo from '../Logo';
 
@@ -121,6 +122,14 @@ const Projects = styled.div`
   }
 `;
 
+const AniLinkWrap = styled(AniLink)`
+  transition: all .3s ease-out;
+
+  &:hover {
+    box-shadow: 0 0 12px #ee5622;
+  }
+`;
+
 const ProjectSquare = styled.div`
   width: 320px;
   height: 320px;
@@ -140,6 +149,7 @@ const ProjectSquare = styled.div`
   p {
     font-family: 'Montserrat';
     font-size: .9rem;
+    color: #fff;
   }
 
   &.fill {
@@ -163,7 +173,9 @@ const ProjectSquare = styled.div`
   }
 `;
 
-export const Work = () => {
+export const Work = ({ projects }) => {
+  console.log(projects);
+
   return (
     <WorkDiv>
       <Glowstick style={{ height: '80px', width: '2px', left: `2.4vw`, transform: `translateY(-7vh)` }} />
@@ -174,18 +186,18 @@ export const Work = () => {
           <p>A bit about our recent projects</p>
         </WTitle>
         <Projects>
-          <ProjectSquare>
-            <h2>AnneNext</h2>
-            <p>Your own personal assistant. With AI on top.</p>
-          </ProjectSquare>
-          <ProjectSquare>
-            <h2>NewProject 1</h2>
-            <p>Something extra special.</p>
-          </ProjectSquare>
-          <ProjectSquare className="fill">
-            <h2>NewProject 2</h2>
-            <p>Something extra special, with sprinkles.</p>
-          </ProjectSquare>
+        { 
+          projects.map(p => {
+            return (
+              <AniLinkWrap paintDrip hex="#f7931e" to={`project/${p.node.fields.slug}`} >
+                <ProjectSquare className={p.node.frontmatter.highlight ? 'fill' : ''}>
+                  <h2>{p.node.frontmatter.title}</h2>
+                  <p>{p.node.frontmatter.description}</p>
+                </ProjectSquare>
+              </AniLinkWrap>
+            );
+          }) 
+        }
         </Projects>
       </WWrap>
       <Glowstick style={{ height: '40px', width: '2px', left: `90vw`, transform: `translateY(15vh)` }} />

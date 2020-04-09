@@ -10,6 +10,7 @@ const LContents = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url('/perspective_grid.jpg') center bottom no-repeat;
 `;
 
 const LWrap = styled.div`

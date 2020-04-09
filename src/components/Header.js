@@ -63,6 +63,7 @@ const HeaderDiv = styled.div`
       display: block;
       font-size: 3em;
       color: #fff;
+      z-index: 10;
     }
   }
   
@@ -114,13 +115,17 @@ const HeaderDiv = styled.div`
 const showMenu = (e) => {
   e.preventDefault();
 
-  const ul  = document.querySelector('.header ul');
+  const ul = document.querySelector('.header ul');
   const closeMenu = document.querySelector('a.closeMenu');
+  const hamburger = document.querySelector('a.hamburger');
+
 
   ul.style.opacity = 1;
   ul.style.top = 0;
   closeMenu.style.opacity = 1;
   closeMenu.style.top = '1vh';
+  closeMenu.style.zIndex = '11';
+  hamburger.style.zIndex = '1';
 }
 
 const closeMenu = (e) => {
@@ -128,11 +133,14 @@ const closeMenu = (e) => {
 
   const ul  = document.querySelector('.header ul');
   const closeMenu = document.querySelector('a.closeMenu');
+  const hamburger = document.querySelector('a.hamburger');
 
   ul.style.opacity = 0;
   ul.style.top = '-9999px';
   closeMenu.style.opacity = 0;
   closeMenu.style.top = '-9999px';
+  closeMenu.style.zIndex = '9';
+  hamburger.style.zIndex = '11';
 }
 
 export const Header = () => (

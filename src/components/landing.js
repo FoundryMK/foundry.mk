@@ -9,8 +9,8 @@ import { Header } from './Header';
 
 class Layout extends React.Component {
   componentDidMount() {
-    const bgWrapper = document.querySelector('.lcontents');
-    document.querySelector('.lwrap').style.height = `${bgWrapper.clientHeight + 120}px`;
+    // const bgWrapper = document.querySelector('.lcontents');
+    // document.querySelector('.lwrap').style.height = `${bgWrapper.clientHeight + 120}px`;
   }
 
   render() {
@@ -20,9 +20,9 @@ class Layout extends React.Component {
       <div style={{ width: '100vw', overflow: 'hidden' }}>
         <Wrapper>
           <Header />
-          <div className="lwrap">
+          {/* <div className="lwrap">
             <div className="landing"></div>
-          </div>
+          </div> */}
           <div
             style={{
               padding: 0,
