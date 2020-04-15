@@ -96,12 +96,12 @@ export const About = () => {
           <WGContent>
             <Title>About Foundry</Title>
             <TextBlock>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+              Foundry was established in 2018 by a team of veterans as a dedicated software development company focused on solving our clients’ hardest technical challenges. From the drawing board, to an MVP or a prototype – we help them realize and test the viability of their business ideas on the market.
             </TextBlock>
-            <ImageBlock src="/droidworks170400137.jpg" />
-            <ImageBlock src="/droidworks170400137.jpg" />
+            {/* <ImageBlock src="/droidworks170400137.jpg" /> */}
+            {/* <ImageBlock src="/droidworks170400137.jpg" /> */}
             <TextBlock>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+              In the age of global digitalization and broadband internet connections, geographical location quickly loses its significance in our industry. We believe that every engineer can craft their own perfect working environment and provide the best results. Foundry is a completely remote-capable company, delivering value globally.
             </TextBlock>
           </WGContent>
           <Breaker />
