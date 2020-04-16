@@ -110,7 +110,7 @@ export const Hero = () => {
             ready to help with the <br/> <Orange>toughest</Orange> technical <Orange>challenges</Orange>.
           </BigText>
           <SmallText>
-            {LandingData.hero_subtitle}
+            {LandingData.hero_section_subtitle}
           </SmallText>
         </Text>
         <WWU>
