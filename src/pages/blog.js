@@ -19,7 +19,7 @@ class Blog extends React.Component {
 
     return (
       <Layout>
-        <SEO title="All posts" />
+        <SEO title="Blog | All posts" />
         <h1>Blog</h1>
         <div style={{ margin: "20px 0 40px" }}>
           {posts.map(({ node }) => {

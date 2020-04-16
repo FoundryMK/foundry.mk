@@ -1,17 +1,17 @@
 backend:
-  name: test-repo
-
-media_folder: static/assets
-public_folder: assets
+  name: git-gateway
+publish_mode: editorial_workflow
+media_folder: "content/assets"
 
 collections:
-  - name: blog
-    label: Blog
-    folder: content/blog
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: description, label: Description }
-      - { name: body, label: Body, widget: markdown }
+  - label: "About us"
+    name: "about us"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "content/pages/about.md"
+        fields: 
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Path", name: "path", widget: "hidden", default: "about-us" }
+          - { label: "Type", name: "type", widget: "hidden", default: "page" }
+          - { label: "Body", name: "body", widget: "markdown" }
