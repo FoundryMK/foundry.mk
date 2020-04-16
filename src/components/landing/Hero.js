@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from "gatsby";
 
+import LandingData from '../../../content/landing.json';
+
 const LContents = styled.div`
   paddingTop: 7vh;
   flexGrow: 2;
@@ -108,8 +110,7 @@ export const Hero = () => {
             ready to help with the <br/> <Orange>toughest</Orange> technical <Orange>challenges</Orange>.
           </BigText>
           <SmallText>
-            Whether it's a full project, some assistance or an extension to your team - we're your people.
-            Web applications big and small, distributed systems, serverless solutions, offline-first and PWAs - all done with the latest industry standards, professionally and on time.
+            {LandingData.hero_subtitle}
           </SmallText>
         </Text>
         <WWU>

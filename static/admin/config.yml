@@ -4,6 +4,37 @@ publish_mode: editorial_workflow
 media_folder: "content/assets"
 
 collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Type", name: "type", widget: "hidden", default: "blog" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Type", name: "type", widget: "hidden", default: "project" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - label: "Landing page"
+    name: "landing page"
+    files:
+      - label: "Landing page"
+        name: "landing"
+        file: "content/landing.json"
+        fields: 
+          - { label: "Hero subtitle", name: "hero_section_subtitle", widget: "string" }
+          - { label: "Services section", name: "services_section", widget: "markdown" }
+          - { label: "Work subtitle", name: "work_section_subtitle", widget: "string" }
+          - { label: "About section", name: "about_section", widget: "markdown" }
   - label: "About us"
     name: "about us"
     files:

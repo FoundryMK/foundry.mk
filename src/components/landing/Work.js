@@ -4,6 +4,8 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import Logo from '../Logo';
 
+import LandingData from '../../../content/landing.json';
+
 const RHalfCircle = styled.div`
   position: absolute;
   right: 0;
@@ -124,9 +126,23 @@ const Projects = styled.div`
 
 const AniLinkWrap = styled(AniLink)`
   transition: all .3s ease-out;
+  text-decoration: none;
+  color: transparent;
 
   &:hover {
     box-shadow: 0 0 12px #ee5622;
+  }
+
+  @media (max-width: 834px) {
+    margin-bottom: 5vh;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 5vh;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -138,6 +154,15 @@ const ProjectSquare = styled.div`
   justify-content: flex-end;
   flex-direction: column;
   padding: 1.5rem;
+  background: url(
+    data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGElEQVQImWMwVLP7z4AN4JQgHRiq2f0HABy3BL2YaDYEAAAAAElFTkSuQmCC
+  ) repeat;
+
+  &:hover {
+    background: url(
+      data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGElEQVQImWP4GiErxYAN4JQgHXyNkJUCABlEBI3kGfjaAAAAAElFTkSuQmCC
+    ) repeat;
+  }
 
   h2 {
     color: #f7931e;
@@ -159,18 +184,6 @@ const ProjectSquare = styled.div`
       color: #fff;
     }
   }
-
-  @media (max-width: 834px) {
-    margin-bottom: 5vh;
-  }
-
-  @media (max-width: 600px) {
-    margin-bottom: 5vh;
-
-    &:last-child {
-      margi-bottom: 0;
-    }
-  }
 `;
 
 export const Work = ({ projects }) => {
@@ -183,7 +196,7 @@ export const Work = ({ projects }) => {
       <WWrap>
         <WTitle>
           <h1>our latest work</h1>
-          <p>A bit about our recent projects</p>
+          <p>{LandingData.work_section_subtitle}</p>
         </WTitle>
         <Projects>
         { 

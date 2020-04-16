@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import MarkdownContent from '../MarkdownContent';
+
+import LandingData from '../../../content/landing.json';
 
 import Logo from '../Logo';
 
@@ -53,14 +56,35 @@ const SWrap = styled.div`
   }
 `;
 
-const Text = styled.div`
-  padding-left: 3vw;
+const MDContainer = styled.div`
+  width: 70vw;
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  flex-wrap: wrap;
 
-  @media (min-width: 1440px) {
-    flex-direction: row;
+  @media (max-width: 834px) {
+    flex-direction: column;
+  }
+
+  p {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    width: 50%;
+    padding: 1%;
+
+    @media (max-width: 834px) {
+      width: 100%;
+    }
+  }
+
+  img {
+    width: 50%;
+    padding: 1%;
+    border: 1px solid #31263e;
+    background: #ededed;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
   }
 `;
 
@@ -106,18 +130,6 @@ const LogoWrap = styled(Logo)`
   opacity: .3;
 `
 
-const P = styled.p`
-  font-family: Montserrat;
-
-  @media (max-width: 834px) {
-    max-width: inherit;
-  }
-
-  @media (min-width: 1440px) {
-    width: 40vw;
-  }
-`;
-
 const H1 = styled.h1`
   text-transform: uppercase;
   padding-left: 3vw;
@@ -155,14 +167,10 @@ export const Services = () => {
         <H1>
           our <br/> <Large>services</Large>
         </H1>
-        <Text>
-          <P>
-            Give shape to your product idea. Plan and evaluate the essential features of your project to accomplish your business goals and eliminate possible mistakes.             Give shape to your product idea. Plan and evaluate the essential features of your project to accomplish your business goals and eliminate possible mistakes.
-          </P>
-          <P>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
-          </P>
-        </Text>
+        <MarkdownContent
+          Wrapper={MDContainer}
+          content={LandingData.services_section}
+        />
       </SWrap>
       <Breaker />
       <LinkWrap paintDrip hex="#f2f2f2" to="/our-services">More about our services</LinkWrap>

@@ -5,8 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Layout } from "../components/layout"
 import SEO from "../components/seo"
 
-const About = ({ data, location }) => {
-  // console.log(data);
+const About = ({ data }) => {
   const aboutMdx = data.mdx;
 
   return (

@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import MarkdownContent from '../MarkdownContent';
+
+import LandingData from '../../../content/landing.json';
 
 const WGWrap = styled.div`
   display: flex;
@@ -34,7 +37,7 @@ const Title = styled.h1`
     width: 5vw;
     min-width: 74px;
     height: 1.3vh;
-    background: #f7931e;;
+    background: #f7931e;
     position: relative;
     margin-top: 1vh;
     display: block;
@@ -42,25 +45,35 @@ const Title = styled.h1`
   }
 `;
 
-const TextBlock = styled.p`
-  font-family: 'Montserrat';
-  font-weight: 400;
-  width: 50%;
-  padding: 1%;
+const MDContainer = styled.div`
+  width: 70vw;
+  display: flex;
+  flex-wrap: wrap;
 
-  @media (max-width: 600px) {
-    width: 100%;
+  @media (max-width: 834px) {
+    flex-direction: column;
   }
-`;
 
-const ImageBlock = styled.img`
-  width: 50%;
-  padding: 1%;
-  border: 1px solid #31263e;
-  background: #ededed;
+  p {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    width: 50%;
+    padding: 1%;
 
-  @media (max-width: 600px) {
-    width: 100%;
+    @media (max-width: 834px) {
+      width: 100%;
+    }
+  }
+
+  img {
+    width: 50%;
+    padding: 1%;
+    border: 1px solid #31263e;
+    background: #ededed;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
   }
 `;
 
@@ -90,19 +103,13 @@ const Breaker = styled.hr`
 `;
 
 export const About = () => {
+  console.log(LandingData);
   return (
     <React.Fragment>
       <WGWrap>
           <WGContent>
             <Title>About Foundry</Title>
-            <TextBlock>
-              Foundry was established in 2018 by a team of veterans as a dedicated software development company focused on solving our clients’ hardest technical challenges. From the drawing board, to an MVP or a prototype – we help them realize and test the viability of their business ideas on the market.
-            </TextBlock>
-            {/* <ImageBlock src="/droidworks170400137.jpg" /> */}
-            {/* <ImageBlock src="/droidworks170400137.jpg" /> */}
-            <TextBlock>
-              In the age of global digitalization and broadband internet connections, geographical location quickly loses its significance in our industry. We believe that every engineer can craft their own perfect working environment and provide the best results. Foundry is a completely remote-capable company, delivering value globally.
-            </TextBlock>
+            <MarkdownContent Wrapper={MDContainer} content={LandingData.about_section} />
           </WGContent>
           <Breaker />
           <LinkWrap paintDrip hex="#f2f2f2" to="/about-us">Discover Foundry</LinkWrap>
