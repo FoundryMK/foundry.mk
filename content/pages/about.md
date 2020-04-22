@@ -1,11 +1,13 @@
 ---
 title: About us
-type: page
 path: about-us
+type: page
 ---
 
 # Dedicated software development and team extension
 ## We help companies and VC-backed startups turn their business ideas into minimum viable products (MVPs) and prototypes and scale up their software development capabilities
+
+---
 
 ## Taking on complex challenges
 
