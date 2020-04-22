@@ -25,7 +25,7 @@ collections:
       - { label: "Type", name: "type", widget: "hidden", default: "project" }
       - { label: "Body", name: "body", widget: "markdown" }
   - label: "Landing page"
-    name: "landing page"
+    name: "landing_page"
     files:
       - label: "Landing page"
         name: "landing"
@@ -36,7 +36,7 @@ collections:
           - { label: "Work subtitle", name: "work_section_subtitle", widget: "string" }
           - { label: "About section", name: "about_section", widget: "markdown" }
   - label: "About us"
-    name: "about us"
+    name: "about_us"
     files:
       - label: "About Page"
         name: "about"
@@ -47,7 +47,7 @@ collections:
           - { label: "Type", name: "type", widget: "hidden", default: "page" }
           - { label: "Body", name: "body", widget: "markdown" }
   - label: "Our services"
-    name: "our services"
+    name: "our_services"
     files:
       - label: "Our Services Page"
         name: "services"
