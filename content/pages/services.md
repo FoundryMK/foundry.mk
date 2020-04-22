@@ -4,9 +4,6 @@ type: page
 path: our-services
 ---
 
-
-# Our services
-
 Foundry provides software development expertise in transforming a business idea into an MVP or a Prototype. Our team seamlessly integrates with our clients’ vision and in-house teams to scale-up their production.
 
 ## Custom product development
